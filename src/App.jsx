@@ -121,7 +121,7 @@ function App() {
           </p>
           
           {/* Side-by-Side Call to Action Buttons with Magnetic Effect */}
-          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+          <div className="hero-buttons">
             <MagneticButton>
               <a href="#products" className="btn-primary" style={{ padding: '14px 28px', display: 'inline-block' }}>
                 Explore Gallery
@@ -242,7 +242,7 @@ function App() {
       {/* Contact Me Section - Side-by-Side Layout */}
       <section id="contact" className="contact-section-grid animate-fade-in" style={{ animationDelay: '0.35s' }}>
         {/* Left Column: Direct Contact Info */}
-        <div style={{ textAlign: 'left', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center' }}>
+        <div className="contact-left-col">
           <span className="text-label" style={{ color: 'var(--color-tertiary)' }}>Get In Touch</span>
           <h2 className="text-display" style={{ fontSize: '3rem', marginTop: '12px', textTransform: 'uppercase', color: '#FFFFFF' }}>Contact Me</h2>
           <div className="divider" style={{ width: '80px', margin: '24px 0', backgroundColor: 'var(--color-tertiary)' }}></div>
@@ -330,15 +330,11 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer style={{ 
-        padding: '32px 40px', 
-        display: 'flex', 
-        justifyContent: 'space-between', 
-        alignItems: 'center',
+      <footer className="footer-container container" style={{ 
         borderTop: '1px solid rgba(242, 238, 229, 0.08)',
         backgroundColor: 'rgba(17, 17, 16, 0.5)'
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <div className="footer-content">
           <img src="/logo.png" alt="Yarn Reverie Logo" style={{ height: '24px', width: '24px', borderRadius: '50%' }} />
           <div className="text-label" style={{ fontSize: '0.65rem' }}>
             © {new Date().getFullYear()} Yarn Reverie. All rights reserved.

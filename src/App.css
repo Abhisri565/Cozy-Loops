@@ -140,15 +140,7 @@
   gap: 40px;
 }
 
-@media (max-width: 768px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .about-card {
-    padding: 32px 24px;
-  }
-}
+/* Note: about-grid mobile styles moved to unified media query at bottom */
 
 .about-text {
   font-family: var(--font-body);
@@ -187,12 +179,7 @@
   margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-  .products-grid {
-    grid-template-columns: 1fr !important;
-    gap: 32px !important;
-  }
-}
+/* Note: products-grid mobile styles moved to unified media query at bottom */
 
 /* Product Card design and transitions */
 .product-card {
@@ -313,13 +300,7 @@
   margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-  .contact-section-grid {
-    grid-template-columns: 1fr !important;
-    gap: 40px !important;
-    padding: 40px var(--spacing-md) !important;
-  }
-}
+/* Note: contact-grid mobile styles moved to unified media query at bottom */
 
 .contact-card {
   background-color: var(--color-surface);
@@ -439,8 +420,78 @@ nav.mobile-nav {
   display: none;
 }
 
-@media (max-width: 768px) {
-  /* Hide standard desktop nav and show hamburger */
+@media (max-width: 960px) {
+  /* 1. Reset Left Padding Offset on Hero Section */
+  main#home {
+    padding: 100px var(--spacing-md) !important;
+  }
+
+  /* 2. Center Hero Buttons */
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  /* 3. Center About Section Content */
+  .about-card {
+    text-align: center !important;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .about-card {
+    padding: 32px 24px;
+  }
+
+  /* 4. Center Products and Categories */
+  .products-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .product-card {
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .product-price-container {
+    justify-content: center !important;
+  }
+
+  /* 5. Center Contact Section Content */
+  .contact-section-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    padding: 40px var(--spacing-md) !important;
+  }
+  .contact-left-col {
+    text-align: center !important;
+    align-items: center !important;
+  }
+  .contact-left-col .divider {
+    margin: 24px auto !important; /* Center the divider line */
+  }
+  .contact-info-list {
+    align-items: center !important;
+  }
+  .contact-info-item {
+    align-items: center !important;
+  }
+
+  /* 6. Center Footer Content */
+  .footer-container {
+    flex-direction: column !important;
+    gap: 16px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 32px var(--spacing-md) !important;
+  }
+  .footer-content {
+    justify-content: center !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* 7. Navbar Hamburger Menu Overlay & Toggle */
   nav.desktop-nav {
     display: none !important;
   }
@@ -449,7 +500,6 @@ nav.mobile-nav {
     display: flex !important;
   }
   
-  /* Mobile overlay navigation menu slides from top */
   nav.mobile-nav {
     display: flex;
     flex-direction: column;
@@ -486,7 +536,6 @@ nav.mobile-nav {
     color: var(--color-tertiary) !important;
   }
 
-  /* Staggered entrance animation for links when drawer is opened */
   nav.mobile-nav.open a {
     opacity: 1;
     transform: translateY(0);
