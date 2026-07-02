@@ -80,12 +80,12 @@ function App() {
             />
           </h1>
           
-          {/* Elegant Quotation Paragraph - Styled in Gold with Text Shadow for high contrast */}
+          {/* Elegant Quotation Paragraph - Styled in Ivory White with Text Shadow for high contrast and readability */}
           <p className="text-body" style={{ 
             fontSize: '0.92rem', 
             lineHeight: '1.8', 
-            color: 'var(--color-tertiary)', 
-            textShadow: '0 2px 4px rgba(0, 0, 0, 0.9)',
+            color: 'var(--color-primary)', 
+            textShadow: '0 2px 4px rgba(0, 0, 0, 0.95)',
             marginBottom: '40px',
             maxWidth: '520px',
             borderLeft: '2px solid var(--color-tertiary)',

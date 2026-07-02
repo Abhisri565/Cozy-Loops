@@ -42,11 +42,11 @@ export function CanvasText({
       
       // Create a luxury gold gradient for high-contrast letters (still darker bronze-gold tones)
       const grad = ctx.createLinearGradient(0, 0, width, 0);
-      grad.addColorStop(0, '#C5A059');     // Soft antique gold
-      grad.addColorStop(0.25, '#B8860B');  // Warm goldenrod bronze
-      grad.addColorStop(0.5, '#8C6A3F');   // Deep bronze gold (darker element)
-      grad.addColorStop(0.75, '#A37712');  // Amber dark gold
-      grad.addColorStop(1, '#8C6A3F');     // Deep bronze gold
+      grad.addColorStop(0, '#A37712');     // Dark amber gold
+      grad.addColorStop(0.25, '#8C6A3F');  // Deep bronze gold
+      grad.addColorStop(0.5, '#7A5C29');   // Dark antique brass
+      grad.addColorStop(0.75, '#8C6A3F');  // Deep bronze gold
+      grad.addColorStop(1, '#7A5C29');     // Dark antique brass
 
       // 1. Draw Text (Mask base)
       ctx.font = `900 ${fontSize} 'Italiana', serif`;
@@ -85,9 +85,14 @@ export function CanvasText({
         ctx.stroke();
       }
 
-      // 4. Draw backing text and dark outline to maximize contrast
+      // 4. Draw backing text and multiple outlines to maximize contrast
       ctx.globalCompositeOperation = 'destination-over';
       
+      // Draw a bright border outline to frame the dark letters clearly
+      ctx.strokeStyle = '#FFEAA7'; // High-contrast warm cream-gold border
+      ctx.lineWidth = 4;
+      ctx.strokeText(text, textX, textY);
+
       // Draw a bold dark outline to separate text from the dark background
       ctx.strokeStyle = '#111110';
       ctx.lineWidth = 10; // Extra thick boundary line to pop out
