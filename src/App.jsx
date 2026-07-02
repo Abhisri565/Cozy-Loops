@@ -21,9 +21,6 @@ function App() {
       <header style={{ 
         position: 'sticky',
         top: 0,
-        left: 0,
-        right: 0,
-        width: '100%',
         zIndex: 1000,
         borderBottom: '1px solid rgba(242, 238, 229, 0.08)',
         backdropFilter: 'blur(16px)',
