@@ -48,9 +48,9 @@ export function CanvasText({
       grad.addColorStop(0.75, '#8C6A3F');  // Deep bronze gold
       grad.addColorStop(1, '#7A5C29');     // Dark antique brass
 
-      // Helper to draw text with individual character spacing in Canvas
+      // Helper to draw text with individual character spacing in Canvas (responsive spacing)
       const drawTextWithSpacing = (type, content, startX, y) => {
-        const charSpacing = 10; // 10px extra letter spacing to prevent character overlap
+        const charSpacing = width < 500 ? 8 : 22; // 8px spacing on mobile, 22px spacing on desktop
         let currentX = startX;
         for (let i = 0; i < content.length; i++) {
           const char = content[i];
