@@ -55,13 +55,13 @@ export function CanvasText({
       // Use a responsive font size based on screen width
       const fontSize = width < 500 ? '3.2rem' : '4.5rem';
       
-      // Create a luxury gold gradient for high-contrast letters (deeper dark gold tones)
+      // Create a luxury gold gradient for high-contrast letters (bright, luminous gold tones)
       const grad = ctx.createLinearGradient(0, 0, width, 0);
-      grad.addColorStop(0, '#D4AF37');     // 24k Gold base
-      grad.addColorStop(0.25, '#FFEAA7');  // Warm champagne gold highlight
-      grad.addColorStop(0.5, '#B8860B');   // Deep, dark goldenrod bronze
-      grad.addColorStop(0.75, '#A37712');  // Amber dark gold
-      grad.addColorStop(1, '#C5A059');     // Soft antique gold
+      grad.addColorStop(0, '#FFD700');     // Bright metallic gold
+      grad.addColorStop(0.25, '#FFF8DC');  // Luminous cream highlight
+      grad.addColorStop(0.5, '#FFEAA7');   // Sparkling champagne gold
+      grad.addColorStop(0.75, '#FFDF00');  // Vibrant yellow gold
+      grad.addColorStop(1, '#D4AF37');     // Rich 24k gold
 
       // Helper to draw text with individual character spacing in Canvas (responsive spacing)
       const drawTextWithSpacing = (type, content, startX, y) => {

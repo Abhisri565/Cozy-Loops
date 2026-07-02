@@ -74,7 +74,7 @@ function App() {
           }}>
             <CanvasText 
               text="Yarn Reverie" 
-              colors={['#B8860B', '#CD7F32', '#8C6A3F', '#A37712', '#7A5C29']} 
+              colors={['#FFD700', '#F2EEE5', '#FFEAA7', '#D4AF37', '#FFF8DC']} 
               lineGap={6} 
               animationDuration={25} 
             />
