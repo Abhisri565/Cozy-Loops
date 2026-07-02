@@ -415,6 +415,21 @@
   transform: rotate(-45deg) translate(2px, 1px);
 }
 
+/* Footer Styles */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px var(--spacing-md);
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 /* Mobile overlay drawer style */
 nav.mobile-nav {
   display: none;
