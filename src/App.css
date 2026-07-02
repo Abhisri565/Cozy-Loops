@@ -498,24 +498,7 @@ nav.mobile-nav {
     align-items: center !important;
   }
 
-  /* 6. Center Footer Content */
-  .footer-container {
-    padding: 32px var(--spacing-md) !important;
-  }
-  .footer-wrap {
-    flex-direction: column !important;
-    gap: 16px !important;
-    text-align: center !important;
-    justify-content: center !important;
-  }
-  .footer-content {
-    justify-content: center !important;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  /* 7. Navbar Hamburger Menu Overlay & Toggle */
+  /* 6. Navbar Hamburger Menu Overlay & Toggle */
   nav.desktop-nav {
     display: none !important;
   }
@@ -569,4 +552,23 @@ nav.mobile-nav {
   nav.mobile-nav.open a:nth-child(2) { transition-delay: 0.18s; }
   nav.mobile-nav.open a:nth-child(3) { transition-delay: 0.26s; }
   nav.mobile-nav.open a:nth-child(4) { transition-delay: 0.34s; }
+}
+
+/* 7. Footer Centering & Responsive stacking for Mobile views under 600px */
+@media (max-width: 600px) {
+  .footer-container {
+    padding: 32px var(--spacing-md) !important;
+  }
+  .footer-wrap {
+    flex-direction: column !important;
+    gap: 16px !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+  .footer-content {
+    justify-content: center !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 }
