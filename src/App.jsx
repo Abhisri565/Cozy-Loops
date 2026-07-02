@@ -1,8 +1,12 @@
+import React, { useState } from 'react'
 import { MagneticButton } from './components/ui/magnetic-button'
 import { CanvasText } from './components/ui/canvas-text'
 import './App.css'
 
 function App() {
+  // Mobile menu open/close state
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   // 4 Main product categories
   const categories = [
     { id: 1, name: "Keychains", quote: "Miniature loops of art designed for daily travel." },
@@ -38,12 +42,31 @@ function App() {
             </div>
           </a>
 
-          {/* Right Side: Links in exact requested order */}
-          <nav style={{ display: 'flex', gap: '24px' }}>
+          {/* Right Side: Desktop Links (hidden on mobile) */}
+          <nav className="desktop-nav" style={{ display: 'flex', gap: '24px' }}>
             <a href="#home" className="text-label" style={{ color: 'var(--color-primary)', fontSize: '0.7rem' }}>Home</a>
             <a href="#about" className="text-label" style={{ color: 'var(--color-primary)', fontSize: '0.7rem' }}>About</a>
             <a href="#products" className="text-label" style={{ color: 'var(--color-primary)', fontSize: '0.7rem' }}>Products</a>
             <a href="#contact" className="text-label" style={{ color: 'var(--color-primary)', fontSize: '0.7rem' }}>Contact Me</a>
+          </nav>
+
+          {/* Hamburger Menu Toggle Button for Mobile */}
+          <button 
+            className={`menu-toggle ${isMenuOpen ? 'open' : ''}`} 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle navigation menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          {/* Mobile Overlay Navigation Drawer */}
+          <nav className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
+            <a href="#home" className="text-label" onClick={() => setIsMenuOpen(false)}>Home</a>
+            <a href="#about" className="text-label" onClick={() => setIsMenuOpen(false)}>About</a>
+            <a href="#products" className="text-label" onClick={() => setIsMenuOpen(false)}>Products</a>
+            <a href="#contact" className="text-label" onClick={() => setIsMenuOpen(false)}>Contact Me</a>
           </nav>
         </div>
       </header>
