@@ -26,7 +26,7 @@ export function CanvasText({
       ctx.font = `400 ${fontSize} 'Italiana', serif`;
 
       // Measure total text width with spacing
-      const charSpacing = rect.width < 500 ? 8 : 20;
+      const charSpacing = rect.width < 500 ? 8 : 15;
       let textWidth = 0;
       for (let i = 0; i < text.length; i++) {
         textWidth += ctx.measureText(text[i]).width + charSpacing;
@@ -65,7 +65,7 @@ export function CanvasText({
 
       // Helper to draw text with individual character spacing in Canvas (responsive spacing)
       const drawTextWithSpacing = (type, content, startX, y) => {
-        const charSpacing = width < 500 ? 8 : 20; // 8px spacing on mobile, 20px spacing on desktop
+        const charSpacing = width < 500 ? 8 : 15; // 8px spacing on mobile, 15px spacing on desktop
         let currentX = startX;
         for (let i = 0; i < content.length; i++) {
           const char = content[i];
