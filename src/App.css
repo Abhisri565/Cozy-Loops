@@ -1,0 +1,409 @@
+/* App-specific custom layouts and page structures */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive adjustments for Hero and Navigation */
+@media (max-width: 960px) {
+  main.container {
+    grid-template-columns: 1fr !important;
+    padding: 40px var(--spacing-md) !important;
+    gap: 48px !important;
+    text-align: center;
+  }
+  
+  .hero-left {
+    align-items: center !important;
+    text-align: center !important;
+  }
+  
+  .hero-left .text-body {
+    border-left: none !important;
+    padding-left: 0 !important;
+    max-width: 500px;
+    margin: 0 auto 32px auto !important;
+  }
+  
+  header {
+    padding: 16px 20px !important;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  
+  header nav {
+    gap: 16px !important;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .text-display {
+    font-size: 3.5rem !important;
+  }
+  
+  .contact-card {
+    padding: 24px !important;
+  }
+}
+
+/* Entry Fade In Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeInUp 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Capsule Badge Styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background-color: rgba(242, 238, 229, 0.05);
+  border: 1px solid rgba(242, 238, 229, 0.08);
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-tertiary);
+  box-shadow: 0 0 8px var(--color-tertiary);
+}
+
+.badge-text {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+/* Orbit Container on the Right Hero Column */
+.orbit-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 360px;
+}
+
+.orbit-image {
+  width: 250px;
+  height: 310px; /* Tall architectural portal shape */
+  border-radius: 125px 125px 24px 24px; /* Arched dome top, soft corners bottom */
+  object-fit: cover;
+  border: 2px solid var(--color-tertiary);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-radius var(--transition-normal);
+}
+
+.orbit-container:hover .orbit-image {
+  transform: scale(1.04) translateY(-4px); /* Scales and lifts up slightly on hover */
+  box-shadow: 0 20px 48px rgba(197, 160, 89, 0.25);
+}
+
+/* About Us Section Styles */
+.about-section {
+  padding: 80px var(--spacing-md);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.about-card {
+  background-color: var(--color-surface);
+  border: 1px solid rgba(242, 238, 229, 0.06);
+  border-radius: var(--rounded-md);
+  padding: 48px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.about-card:hover {
+  border-color: var(--color-tertiary);
+  box-shadow: 0 12px 30px rgba(197, 160, 89, 0.08);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .about-card {
+    padding: 32px 24px;
+  }
+}
+
+.about-text {
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: var(--color-secondary);
+  transition: color var(--transition-fast);
+}
+
+.about-card:hover .about-text {
+  color: var(--color-primary);
+}
+
+/* Expanding Gold Accent Line at bottom of Card */
+.about-accent-line {
+  height: 2px;
+  width: 0;
+  background-color: var(--color-tertiary);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.about-card:hover .about-accent-line {
+  width: 100%;
+}
+
+/* Products grid layout */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  padding: 40px 0;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+/* Product Card design and transitions */
+.product-card {
+  background-color: var(--color-surface);
+  border: 1px solid rgba(242, 238, 229, 0.06);
+  border-radius: var(--rounded-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Card hover animation - lifts up, changes border color and adds soft gold shadow */
+.product-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-tertiary);
+  box-shadow: 0 12px 30px rgba(197, 160, 89, 0.12);
+}
+
+/* Image placeholder inside card */
+.product-image-placeholder {
+  width: 100%;
+  height: 320px;
+  background-color: rgba(17, 17, 16, 0.4);
+  border: 1px solid rgba(242, 238, 229, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color var(--transition-fast);
+}
+
+.product-card:hover .product-image-placeholder {
+  background-color: rgba(17, 17, 16, 0.6);
+}
+
+/* Shimmer/reflection line across image on hover */
+.product-image-placeholder::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(242, 238, 229, 0.03),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.product-card:hover .product-image-placeholder::after {
+  left: 150%;
+  transition: 0.8s ease-in-out;
+}
+
+/* Title text inside card */
+.product-title {
+  font-family: var(--font-h1);
+  font-size: 1.35rem;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+  font-weight: 400;
+  transition: color var(--transition-fast);
+}
+
+.product-card:hover .product-title {
+  color: var(--color-tertiary);
+}
+
+/* Sub-text quote inside card */
+.product-quote {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--color-secondary);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+/* Price block at bottom of card */
+.product-price-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: auto;
+  border-top: 1px solid rgba(242, 238, 229, 0.05);
+  padding-top: 12px;
+}
+
+.product-price {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--color-primary);
+}
+
+/* Contact Section Grid layout - side by side */
+.contact-section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 64px;
+  align-items: flex-start;
+  padding: 80px var(--spacing-md) 100px var(--spacing-md);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .contact-section-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    padding: 40px var(--spacing-md) !important;
+  }
+}
+
+.contact-card {
+  background-color: var(--color-surface);
+  border: 1px solid rgba(242, 238, 229, 0.08);
+  border-radius: var(--rounded-md);
+  padding: 40px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(242, 238, 229, 0.1);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.form-label {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: 8px;
+}
+
+.form-input {
+  background-color: rgba(17, 17, 16, 0.35);
+  border: 1px solid rgba(242, 238, 229, 0.08);
+  color: var(--color-primary);
+  padding: 12px 16px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  border-radius: var(--rounded-sm);
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+  outline: none;
+  width: 100%;
+}
+
+.form-input:focus {
+  border-color: var(--color-tertiary);
+  background-color: rgba(17, 17, 16, 0.55);
+}
+
+.contact-info-list {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-info-item {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-secondary);
+  letter-spacing: 0.05em;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info-item strong {
+  color: var(--color-tertiary);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 4px;
+}
+
+.contact-info-value {
+  color: var(--color-primary);
+  font-size: 1.05rem;
+}

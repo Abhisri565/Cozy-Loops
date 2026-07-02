@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <style>
+      .gold-line {
+        fill: none;
+        stroke: #C5A059;
+        stroke-width: 2;
+        stroke-miterlimit: 10;
+        transition: stroke-dashoffset 2s ease-in-out;
+      }
+      .white-dash {
+        fill: none;
+        stroke: #F2EEE5;
+        stroke-width: 1;
+        stroke-linecap: round;
+        stroke-dasharray: 3 3;
+        opacity: 0.8;
+      }
+      .logo-text {
+        font-family: 'Italiana', serif;
+        font-size: 16px;
+        fill: #F2EEE5;
+        letter-spacing: 0.1em;
+        text-anchor: middle;
+      }
+    </style>
+  </defs>
+  <!-- Beautiful organic/geometric interlocking loops representing crochet loops -->
+  <path class="gold-line" d="M35 50 C 35 32, 42 22, 50 22 C 58 22, 65 32, 65 50 C 65 68, 58 78, 50 78 C 42 78, 35 68, 35 50 Z" />
+  <path class="white-dash" d="M39 50 C 39 35, 44 26, 50 26 C 56 26, 61 35, 61 50 C 61 65, 56 74, 50 74 C 44 74, 39 65, 39 50 Z" />
+  <!-- A cross loop for yarn intersection -->
+  <path class="gold-line" d="M50 35 C 38 35, 28 42, 28 50 C 28 58, 38 65, 50 65" />
+  <text x="50.5" y="55" class="logo-text">C</text>
+</svg>
