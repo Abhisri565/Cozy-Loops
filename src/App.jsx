@@ -32,9 +32,9 @@ function App() {
         }}>
           {/* Left Side: Logo and Name (Links to Home) */}
           <a href="#home" style={{ display: 'flex', alignItems: 'center', gap: '10px', transition: 'opacity var(--transition-fast)' }} onMouseOver={(e) => e.currentTarget.style.opacity = 0.8} onMouseOut={(e) => e.currentTarget.style.opacity = 1}>
-            <img src="/logo.png" alt="Cozy Loops Logo" style={{ height: '32px', width: '32px', borderRadius: '50%', objectFit: 'cover' }} />
+            <img src="/logo.png" alt="Yarn Reverie Logo" style={{ height: '32px', width: '32px', borderRadius: '50%', objectFit: 'cover' }} />
             <div className="text-label" style={{ fontWeight: '700', fontSize: '0.8rem', letterSpacing: '0.12em', color: 'var(--color-primary)' }}>
-              Cozy Loops
+              Yarn Reverie
             </div>
           </a>
 
@@ -73,7 +73,7 @@ function App() {
             letterSpacing: '0.01em'
           }}>
             <CanvasText 
-              text="Cozy Loops" 
+              text="Yarn Reverie" 
               colors={['#B8860B', '#CD7F32', '#8C6A3F', '#A37712', '#7A5C29']} 
               lineGap={6} 
               animationDuration={25} 
@@ -313,9 +313,9 @@ function App() {
         backgroundColor: 'rgba(17, 17, 16, 0.5)'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <img src="/logo.png" alt="Cozy Loops Logo" style={{ height: '24px', width: '24px', borderRadius: '50%' }} />
+          <img src="/logo.png" alt="Yarn Reverie Logo" style={{ height: '24px', width: '24px', borderRadius: '50%' }} />
           <div className="text-label" style={{ fontSize: '0.65rem' }}>
-            © {new Date().getFullYear()} Cozy Loops. All rights reserved.
+            © {new Date().getFullYear()} Yarn Reverie. All rights reserved.
           </div>
         </div>
         <div className="text-label" style={{ fontSize: '0.82rem', fontStyle: 'italic', textTransform: 'none', letterSpacing: '0.08em', color: 'var(--color-secondary)' }}>
